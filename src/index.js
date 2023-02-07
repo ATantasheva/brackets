@@ -1,15 +1,15 @@
 module.exports = function check(str, bracketsConfig) {
   // your solution
-  let stack = [];
+  let arr = [];
   
-  let newBracketsConfig = new Map(bracketsConfig);
+  let newBracketsConfig01 = new Map(bracketsConfig);
 
   str.split('').forEach((elem) => {
-    if (elem == newBracketsConfig.get(stack[stack.length - 1])) {
-      stack.pop();
+    if (elem == newBracketsConfig01.get(arr[arr.length - 1])) {
+      arr.pop();
     } else {
-      stack.push(elem);
+      arr.push(elem);
     }
   })
-  return stack.length !== 0 ? false : true;
+  return arr.length !== 0 ? false : true;
 }
